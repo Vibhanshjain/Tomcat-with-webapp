@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven'
-        jdk 'JDK'
+        maven 'Maven'     // Your Maven installation name in Jenkins
+        jdk 'JDK'      // Your JDK installation name in Jenkins
     }
 
     stages {
@@ -21,10 +21,8 @@ pipeline {
 
         stage('Deploy WAR') {
             steps {
-                sh 'cp target/MymavenWebApp01.war /opt/tomcat/webapps/'
+                sh 'sudo cp target/MymavenWebApp01.war /opt/tomcat/webapps/'
             }
         }
-
-        }
     }
-
+}
